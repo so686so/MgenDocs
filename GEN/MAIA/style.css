@@ -1,0 +1,178 @@
+/* Base layout */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: #fdfdfd;
+    color: #333;
+  }
+
+  .content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+    background-color: #fff;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+  }
+
+  /* 링크에 밑줄 제거 */
+  a {
+    text-decoration: none;
+    color: #2452be; /* 기본 링크 색상 */
+  }
+
+  a:visited {
+    color: #7e96ce; /* 방문한 링크 색상 */
+  }
+
+  a:hover {
+    color: #0950f7; /* 링크 hover 시 색상 */
+  }
+
+  a:active {
+    color: #32b0de; /* 활성화된 링크 색상 */
+  }
+
+  /* TOC area */
+  .toc {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    width: 260px;
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+    padding: 1rem;
+    background-color: #fff;
+    border-left: 3px solid #3498db;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 0.9rem;
+    z-index: 1;
+    word-break: break-word;
+  }
+
+  .toc .toc-list {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .toc .toc-list-item {
+    margin: 0.25rem 0;
+  }
+
+  .toc .toc-link {
+    text-decoration: none;
+    color: #555;
+    transition: all 0.2s ease;
+    display: block;
+    white-space: normal;
+    overflow-wrap: break-word;
+    padding-left: 4px;
+  }
+
+  .toc .toc-link:hover {
+    color: #3498db;
+    font-weight: bold;
+  }
+
+  .toc .is-active-link {
+    color: #3498db;
+    font-weight: bold;
+  }
+
+  /* TOC depth indentation */
+  .toc .is-level-1 { padding-left: 0rem; }
+  .toc .is-level-2 { padding-left: 1rem; }
+  .toc .is-level-3 { padding-left: 2rem; }
+  .toc .is-level-4 { padding-left: 3rem; }
+
+  .toc .is-level-1 > .toc-link {
+    font-weight: bold;
+    color: #000;
+  }
+
+  /* Headings */
+  h1, h2, h3, h4 {
+    margin-top: 2rem;
+    transition: color 0.15s ease, font-weight 0.15s ease;
+  }
+
+  h1 {
+    color: #222;
+  }
+
+  h2 {
+    color: #2452be;
+  }
+
+  h3, h4 {
+    color: #222;
+  }
+
+  /* 활성화된 제목 스타일 */
+  h1.is-active, h2.is-active, h3.is-active, h4.is-active {
+    color: #39b1c1;
+    font-weight: bold;
+    transition: color 0.15s ease, font-weight 0.15s ease;
+  }
+
+  h1.title {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 0.2em;
+  }
+
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+  }
+
+  table th, table td {
+    border: 1px solid #ccc;
+    padding: 0.75rem 1rem;
+    text-align: left;
+    word-break: break-word;
+  }
+
+  /* 첫 번째 테이블 컬럼 너비 고정 */
+  table th:first-child,
+  table td:first-child {
+    width: 180px;
+    max-width: 180px;
+    white-space: normal;
+    word-break: break-word;
+  }
+
+  th {
+    background-color: #f0f0f0;
+  }
+
+  /* Code blocks */
+  code {
+    font-family: Consolas, monospace;
+    background: #f4f4f4;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+  }
+
+  pre code {
+    display: block;
+    padding: 1rem;
+    background: #f4f4f4;
+    overflow-x: auto;
+    position: relative;
+    z-index: 0;
+  }
+
+  /* Responsive adjustments */
+  @media screen and (max-width: 1000px) {
+    .toc {
+      display: none;
+    }
+
+    .content {
+      padding: 2rem 1rem;
+    }
+  }
