@@ -91,6 +91,7 @@
   "Priority": 1,
   "InferenceBatchSize": 4,
   "InferenceWeight": 20,
+  "InputSizeMutable": false,
   "InputImageWidth": 640,
   "InputImageHeight": 640,
   "GpuAllocType": "All",
@@ -110,6 +111,7 @@
 | Priority | 동일 분류 단계에서의 우선 순위. <br>숫자가 낮을수록 우선순위 높음(1~99 사이의 값) |
 | InferenceBatchSize | 추론 시 batch 크기 설정 |
 | InferenceWeight | 추론 속도 기반 엔진 선택 가중치. <br>숫자가 작을수록 추론에 리소스 적게 소모 (1~100 사이의 값) |
+| InputSizeMutable | 추론 입력 이미지 사이즈의 변동 가능 여부. <br> Crop Image 기반의 attribute 추론 시에만 true 가능 |
 | InputImageWidth | 추론 입력 이미지의 가로 픽셀 크기 |
 | InputImageHeight | 추론 입력 이미지의 세로 픽셀 크기 |
 | [GpuAllocType](#gpualloctype) | GPU 할당 방식. One, Half, All 중 하나 |
@@ -180,6 +182,8 @@
 ```yaml
 # MAIA_ROOT/engine/classes/2402_mgen_v0.2.classes.yaml
 
+classify_activate: true
+
 num_class: 8
 
 names:
@@ -196,6 +200,7 @@ names:
 
 | 키 이름 | 설명 |
 |---------|------|
+| classify_activate | YML 파일과 연동된 엔진이 ID로 클래스(person, fire...)를 구별 가능한지의 여부. <br>Output layer가 단순 feature 값이라면 해당 값을 이용해도 클래스 특정을 못하게 되니 false. <br>해당 값이 false라면 'num_classes'와 'names' 사용하지 않음. |
 | num_classes | 엔진의 총 클래스 갯수. <br>offset만 존재하는 클래스여도 클래스 수에 포함 |
 | names | 실제 클래스 표기. <br>각 클래스 ID를 키값으로 하는 클래스 이름 기입. <br>offset만 존재하는 클래스여도 index(ID) 존재시 기입 |
 
@@ -204,5 +209,5 @@ names:
 &nbsp;
 
 ---
-**<center>AI Engine Model Specification V1.0.0</center>**
-<center>Last Updated: 2025-04-08</center>
+**<center>AI Engine Model Specification V1.0.1</center>**
+<center>Last Updated: 2025-04-09</center>
