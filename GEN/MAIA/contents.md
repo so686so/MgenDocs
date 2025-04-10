@@ -105,7 +105,7 @@
 | 키 이름 | 설명 |
 |---------|------|
 | ProfileName | 프로필 식별용 이름. 오류 로그 등에서 프로필을 명시하기 위해 사용 |
-| [ModelMajorType](#modelmajortype) | 모델의 대분류. <br>Detection, Attribute, Segmentation 등 모델의 탐지 방식에 따른 분류|
+| [ModelMajorType](#modelmajortype) | 모델의 대분류. <br>Detection, Classification, Segmentation 등 모델의 탐지 방식에 따른 분류|
 | [ModelMinorType](#modelminortype) | 모델의 세부 분류. <br>YoloV5, YoloX, ResNet50 등 실제 모델에 대한 분류|
 | ModelMagicType | 사용자 정의 태그. 동일 모델 종류에서 특정 엔진을 식별하기 위한 식별자 |
 | Priority | 동일 분류 단계에서의 우선 순위. <br>숫자가 낮을수록 우선순위 높음(1~99 사이의 값) |
@@ -143,7 +143,7 @@
 |----------------|-------------------|
 | None           | 없음              |
 | Detection      | 객체 탐지         |
-| Attribute      | 속성 분석         |
+| Classification      | 속성 분석         |
 | Segmentation   | 이미지 분할       |
 | PoseEstimation | 자세 추정         |
 <div style="text-align: right"><a href="#engineprofile-key">[▲]</a></div>
@@ -209,5 +209,5 @@ names:
 &nbsp;
 
 ---
-**<center>AI Engine Model Specification V1.0.1</center>**
-<center>Last Updated: 2025-04-09</center>
+**<center>AI Engine Model Specification V1.0.2</center>**
+<center>Last Updated: 2025-04-10</center>
