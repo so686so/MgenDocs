@@ -115,7 +115,7 @@
 | InputImageWidth | 추론 입력 이미지의 가로 픽셀 크기 |
 | InputImageHeight | 추론 입력 이미지의 세로 픽셀 크기 |
 | [GpuAllocType](#gpualloctype) | GPU 할당 방식. One, Half, All 중 하나 |
-| [ModelOptimizeType](#modeloptimizetype) | 모델 최적화 방식. TensorRT, ONNX, RTX 등 |
+| [ModelOptimizeType](#modeloptimizetype) | 모델 최적화 방식. Torch_Onnx_TRT, Torch_RTX, Keras_Onnx 등 |
 | [OptimizeGpuArchType](#optimizegpuarchtype) | GPU 최적화 아키텍처. Turing, Ampere, AdaLovelace, Hopper 등 |
 
 #### GpuAllocType
@@ -163,12 +163,17 @@
 
 #### ModelOptimizeType
 
-| 값      | 설명             |
-|---------|------------------|
-| None    | 최적화 없음      |
-| Onnx    | ONNX 형식 최적화 |
-| TensorRT| TensorRT 최적화  |
-| RTX     | RTX용 최적화     |
+| 값 | Train | Optimize | Output |
+| --- | --- | --- | --- |
+| None | 구분 없음 | 최적화 없음 | 구분 없음 |
+| Torch_Onnx_TRT | Torch | Onnx 최적화를 거친 TensorRT | .engine |
+| Torch_Onnx | Torch | Onnx | .onnx |
+| Torch_TRT | Torch | 중간 최적화 없이 바로 TensorRT | .engine |
+| Torch_RTX | Torch | tensorrtx | .engine |
+| Keras_Onnx_TRT | tf.keras | Onnx 최적화를 거친 TensorRT | .engine |
+| Keras_Onnx | tf.keras | Onnx | .onnx |
+| Keras_TRT | tf.keras | 중간 최적화 없이 바로 TensorRT | .engine |
+| Keras_RTX | tf.keras | tensorrtx | .engine |
 <div style="text-align: right"><a href="#engineprofile-key">[▲]</a></div>
 
 &nbsp;

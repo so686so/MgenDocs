@@ -364,7 +364,7 @@ body {
 </tr>
 <tr>
 <td><a href="#modeloptimizetype">ModelOptimizeType</a></td>
-<td>모델 최적화 방식. TensorRT, ONNX, RTX 등</td>
+<td>모델 최적화 방식. Torch_Onnx_TRT, Torch_RTX, Keras_Onnx 등</td>
 </tr>
 <tr>
 <td><a href="#optimizegpuarchtype">OptimizeGpuArchType</a></td>
@@ -491,24 +491,64 @@ body {
 <thead>
 <tr>
 <th>값</th>
-<th>설명</th>
+<th>Train</th>
+<th>Optimize</th>
+<th>Output</th>
 </tr>
 </thead>
 <tbody><tr>
 <td>None</td>
+<td>구분 없음</td>
 <td>최적화 없음</td>
+<td>구분 없음</td>
 </tr>
 <tr>
+<td>Torch_Onnx_TRT</td>
+<td>Torch</td>
+<td>Onnx 최적화를 거친 TensorRT</td>
+<td>.engine</td>
+</tr>
+<tr>
+<td>Torch_Onnx</td>
+<td>Torch</td>
 <td>Onnx</td>
-<td>ONNX 형식 최적화</td>
+<td>.onnx</td>
 </tr>
 <tr>
-<td>TensorRT</td>
-<td>TensorRT 최적화</td>
+<td>Torch_TRT</td>
+<td>Torch</td>
+<td>중간 최적화 없이 바로 TensorRT</td>
+<td>.engine</td>
 </tr>
 <tr>
-<td>RTX</td>
-<td>RTX용 최적화</td>
+<td>Torch_RTX</td>
+<td>Torch</td>
+<td>tensorrtx</td>
+<td>.engine</td>
+</tr>
+<tr>
+<td>Keras_Onnx_TRT</td>
+<td>tf.keras</td>
+<td>Onnx 최적화를 거친 TensorRT</td>
+<td>.engine</td>
+</tr>
+<tr>
+<td>Keras_Onnx</td>
+<td>tf.keras</td>
+<td>Onnx</td>
+<td>.onnx</td>
+</tr>
+<tr>
+<td>Keras_TRT</td>
+<td>tf.keras</td>
+<td>중간 최적화 없이 바로 TensorRT</td>
+<td>.engine</td>
+</tr>
+<tr>
+<td>Keras_RTX</td>
+<td>tf.keras</td>
+<td>tensorrtx</td>
+<td>.engine</td>
 </tr>
 </tbody></table>
 <div style="text-align: right"><a href="#engineprofile-key">[▲]</a></div>
