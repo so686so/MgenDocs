@@ -139,8 +139,8 @@ body {
   /* 첫 번째 테이블 컬럼 너비 고정 */
   table th:first-child,
   table td:first-child {
-    width: 180px;
-    max-width: 180px;
+    width: 200px;
+    max-width: 200px;
     white-space: normal;
     word-break: break-word;
   }

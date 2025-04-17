@@ -95,8 +95,10 @@
   "InputImageWidth": 640,
   "InputImageHeight": 640,
   "GpuAllocType": "All",
-  "ModelOptimizeType": "TensorRT",
-  "OptimizeGpuArchType": "Turing"
+  "ModelOptimizeType": "Torch_Onnx_TRT",
+  "OptimizeGpuArchType": "Turing",
+  "InputLayerBindingName": "images",
+  "OutputLayerBindingName": "output"
 }
 ```
 
@@ -117,6 +119,8 @@
 | [GpuAllocType](#gpualloctype) | GPU 할당 방식. One, Half, All 중 하나 |
 | [ModelOptimizeType](#modeloptimizetype) | 모델 최적화 방식. Torch_Onnx_TRT, Torch_RTX, Keras_Onnx 등 |
 | [OptimizeGpuArchType](#optimizegpuarchtype) | GPU 최적화 아키텍처. Turing, Ampere, AdaLovelace, Hopper 등 |
+| InputLayerBindingName | 모델 엔진 파일 로드 시, input layer에 바인딩 된 name값 |
+| OutputLayerBindingName | 모델 엔진 파일 로드 시, output layer에 바인딩 된 name값 |
 
 #### GpuAllocType
 
@@ -214,5 +218,5 @@ names:
 &nbsp;
 
 ---
-**<center>AI Engine Model Specification V1.0.2</center>**
-<center>Last Updated: 2025-04-10</center>
+**<center>AI Engine Model Specification V1.0.3</center>**
+<center>Last Updated: 2025-04-17</center>

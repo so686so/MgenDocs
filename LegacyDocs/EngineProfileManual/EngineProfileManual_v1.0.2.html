@@ -146,8 +146,8 @@ body {
   /* 첫 번째 테이블 컬럼 너비 고정 */
   table th:first-child,
   table td:first-child {
-    width: 200px;
-    max-width: 200px;
+    width: 180px;
+    max-width: 180px;
     white-space: normal;
     word-break: break-word;
   }
@@ -307,10 +307,8 @@ body {
   &quot;InputImageWidth&quot;: 640,
   &quot;InputImageHeight&quot;: 640,
   &quot;GpuAllocType&quot;: &quot;All&quot;,
-  &quot;ModelOptimizeType&quot;: &quot;Torch_Onnx_TRT&quot;,
-  &quot;OptimizeGpuArchType&quot;: &quot;Turing&quot;,
-  &quot;InputLayerBindingName&quot;: &quot;images&quot;,
-  &quot;OutputLayerBindingName&quot;: &quot;output&quot;
+  &quot;ModelOptimizeType&quot;: &quot;TensorRT&quot;,
+  &quot;OptimizeGpuArchType&quot;: &quot;Turing&quot;
 }
 </code></pre>
 <h3 id="engineprofile-key">EngineProfile | Key</h3><table>
@@ -371,14 +369,6 @@ body {
 <tr>
 <td><a href="#optimizegpuarchtype">OptimizeGpuArchType</a></td>
 <td>GPU 최적화 아키텍처. Turing, Ampere, AdaLovelace, Hopper 등</td>
-</tr>
-<tr>
-<td>InputLayerBindingName</td>
-<td>모델 엔진 파일 로드 시, input layer에 바인딩 된 name값</td>
-</tr>
-<tr>
-<td>OutputLayerBindingName</td>
-<td>모델 엔진 파일 로드 시, output layer에 바인딩 된 name값</td>
 </tr>
 </tbody></table>
 <h4 id="gpualloctype">GpuAllocType</h4><table>
@@ -606,8 +596,8 @@ names:
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <hr>
-<p><strong><center>AI Engine Model Specification V1.0.3</center></strong></p>
-<center>Last Updated: 2025-04-17</center>
+<p><strong><center>AI Engine Model Specification V1.0.2</center></strong></p>
+<center>Last Updated: 2025-04-10</center>
 </div>
 <script src="https://unpkg.com/tocbot/dist/tocbot.min.js"></script>
 <script>
